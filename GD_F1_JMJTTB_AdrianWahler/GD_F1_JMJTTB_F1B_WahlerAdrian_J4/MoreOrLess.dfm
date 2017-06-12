@@ -1,0 +1,99 @@
+object Form9: TForm9
+  Left = 0
+  Top = 0
+  Caption = 'Form9'
+  ClientHeight = 768
+  ClientWidth = 1024
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 120
+  TextHeight = 16
+  object LEquation: TLabel
+    Left = 392
+    Top = 344
+    Width = 55
+    Height = 16
+    Caption = 'LEquation'
+  end
+  object LEqual: TLabel
+    Left = 392
+    Top = 383
+    Width = 9
+    Height = 16
+    Caption = '='
+  end
+  object LResult: TLabel
+    Left = 392
+    Top = 425
+    Width = 41
+    Height = 16
+    Caption = 'LResult'
+  end
+  object LScore: TLabel
+    Left = 624
+    Top = 383
+    Width = 39
+    Height = 16
+    Caption = 'LScore'
+    Layout = tlBottom
+  end
+  object Label1: TLabel
+    Left = 32
+    Top = 16
+    Width = 130
+    Height = 16
+    Caption = 'MOYEN Plus ou moins?'
+  end
+  object TotalScore: TLabel
+    Left = 936
+    Top = 16
+    Width = 62
+    Height = 16
+    Caption = 'TotalScore'
+  end
+  object TimeUp: TLabel
+    Left = 480
+    Top = 224
+    Width = 63
+    Height = 16
+    Caption = 'TIME'#39'S UP!'
+    Visible = False
+  end
+  object BLess: TButton
+    Left = 56
+    Top = 344
+    Width = 97
+    Height = 97
+    Caption = '<'
+    TabOrder = 0
+    OnClick = BLessClick
+  end
+  object BMore: TButton
+    Left = 856
+    Top = 344
+    Width = 97
+    Height = 97
+    Caption = '>'
+    TabOrder = 1
+    OnClick = BMoreClick
+  end
+  object PTime: TProgressBar
+    Left = 240
+    Top = 16
+    Width = 657
+    Height = 21
+    Max = 6000
+    TabOrder = 2
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 968
+    Top = 168
+  end
+end

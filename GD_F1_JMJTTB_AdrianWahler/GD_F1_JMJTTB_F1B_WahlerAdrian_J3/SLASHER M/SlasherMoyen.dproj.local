@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/05/21 13:08:12.000.568,=C:\Users\Judith\Documents\Embarcadero\Studio\Projets\Unit9.pas</Transaction>
+    <Transaction>2017/05/21 13:23:03.000.851,C:\Users\Judith\Documents\Embarcadero\Studio\Projets\Slash.pas=C:\Users\Judith\Documents\Embarcadero\Studio\Projets\Unit9.pas</Transaction>
+    <Transaction>2017/05/21 13:23:03.000.851,C:\Users\Judith\Documents\Embarcadero\Studio\Projets\Slash.dfm=C:\Users\Judith\Documents\Embarcadero\Studio\Projets\Unit9.dfm</Transaction>
+    <Transaction>2017/05/21 14:44:08.000.617,C:\Users\Judith\Documents\Embarcadero\Studio\Projets\Slasher.dproj=C:\Users\Judith\Documents\Embarcadero\Studio\Projets\Project11.dproj</Transaction>
+    <Transaction>2017/06/06 15:42:32.683,C:\Users\Judith\Documents\Embarcadero\Studio\Projets\SLASHER F\SlashFacile.dfm=C:\Users\Judith\Documents\Embarcadero\Studio\Projets\Slash.dfm</Transaction>
+    <Transaction>2017/06/06 15:42:32.683,C:\Users\Judith\Documents\Embarcadero\Studio\Projets\SLASHER F\SlashFacile.pas=C:\Users\Judith\Documents\Embarcadero\Studio\Projets\Slash.pas</Transaction>
+    <Transaction>2017/06/06 15:42:46.862,C:\Users\Judith\Documents\Embarcadero\Studio\Projets\SLASHER F\SlasherFacile.dproj=C:\Users\Judith\Documents\Embarcadero\Studio\Projets\Slasher.dproj</Transaction>
+    <Transaction>2017/06/06 16:02:16.189,C:\Users\Judith\Documents\Embarcadero\Studio\Projets\SLASHER M\SlashMoyen.pas=C:\Users\Judith\Documents\Embarcadero\Studio\Projets\SLASHER F\SlashFacile.pas</Transaction>
+    <Transaction>2017/06/06 16:02:16.190,C:\Users\Judith\Documents\Embarcadero\Studio\Projets\SLASHER M\SlashMoyen.dfm=C:\Users\Judith\Documents\Embarcadero\Studio\Projets\SLASHER F\SlashFacile.dfm</Transaction>
+    <Transaction>2017/06/06 16:02:31.358,C:\Users\Judith\Documents\Embarcadero\Studio\Projets\SLASHER M\SlasherMoyen.dproj=C:\Users\Judith\Documents\Embarcadero\Studio\Projets\SLASHER F\SlasherFacile.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

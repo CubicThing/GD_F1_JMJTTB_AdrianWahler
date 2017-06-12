@@ -1,0 +1,185 @@
+unit MoreOrLess;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls;
+
+CONST
+DIFF = 20;
+
+type
+  TForm9 = class(TForm)
+    LEquation: TLabel;
+    LEqual: TLabel;
+    LResult: TLabel;
+    BLess: TButton;
+    BMore: TButton;
+    LScore: TLabel;
+    Timer1: TTimer;
+    Label1: TLabel;
+    PTime: TProgressBar;
+    TotalScore: TLabel;
+    TimeUp: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+    procedure BLessClick(Sender: TObject);
+    procedure BMoreClick(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  Form9: TForm9;
+  res : integer;
+  PlayerTotalScore : integer;
+  time : integer;
+
+implementation
+
+{$R *.dfm}
+
+
+
+
+procedure TForm9.BMoreClick(Sender: TObject);
+VAR
+  one,two,sign : integer;
+begin
+  if res > strtoint(lresult.Caption) then
+    PlayerTotalScore := PlayerTotalScore + (strtoint(lscore.Caption));
+
+  one := trunc(random(diff * 1000));
+  two := trunc(random(diff * 1000));
+  sign := trunc(random(3)+1);
+
+  case sign of
+    1:BEGIN
+       lresult.Caption := IntToStr((one + two)-(diff*100)+trunc(random(diff*200)));
+       lequation.Caption := inttostr(one)+'+'+inttostr(two);
+       res := one + two;
+    END;
+
+    2:BEGIN
+       lresult.Caption := IntToStr((one - two)-(diff*100)+trunc(random(diff*200)));
+       lequation.Caption := inttostr(one)+'-'+inttostr(two);
+       res := one - two;
+    END;
+
+    3 :BEGIN
+       one := one div 10;
+       two := two div 10;
+       lresult.Caption := IntToStr((one * two)-(diff*100)+trunc(random(diff*200)));
+       lequation.Caption := inttostr(one)+'*'+inttostr(two);
+       res := one * two;
+    END;
+
+
+  end;
+  LScore.Caption := '5000';
+
+end;
+
+
+
+procedure TForm9.FormCreate(Sender: TObject);
+VAR
+  one,two,sign : integer;
+
+BEGIN
+  time := 6000;
+  one := trunc(random(1000));
+  two := trunc(random(1000));
+  sign := trunc(random(3)+1);
+
+  case sign of
+    1:BEGIN
+       lresult.Caption := IntToStr((one + two)-100+trunc(random(200)));
+       lequation.Caption := inttostr(one)+'+'+inttostr(two);
+       res := one + two;
+    END;
+
+    2:BEGIN
+       lresult.Caption := IntToStr((one - two)-100+trunc(random(200)));
+       lequation.Caption := inttostr(one)+'-'+inttostr(two);
+       res := one - two;
+    END;
+
+    3 :BEGIN
+       lresult.Caption := IntToStr((one * two)-100+trunc(random(200)));
+       lequation.Caption := inttostr(one)+'*'+inttostr(two);
+       res := one * two;
+    END;
+
+
+  end;
+      LScore.Caption := '5000';
+end;
+
+procedure TForm9.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+  case key of
+
+   'q' :  TForm9.BLessClick(sender);
+
+   'd' :  TForm9.BMoreClick(Sender: TObject);
+  end;
+end;
+
+procedure TForm9.BLessClick(Sender: TObject);
+VAR
+  one,two,sign : integer;
+begin
+  if res < strtoint(lresult.Caption) then
+        PlayerTotalScore := PlayerTotalScore + (strtoint(lscore.Caption));
+
+  one := trunc(random(1000));
+  two := trunc(random(1000));
+  sign := trunc(random(3)+1);
+
+  case sign of
+    1:BEGIN
+       lresult.Caption := IntToStr((one + two)-100+trunc(random(200)));
+       lequation.Caption := inttostr(one)+'+'+inttostr(two);
+       res := one + two;
+    END;
+
+    2:BEGIN
+       lresult.Caption := IntToStr((one - two)-100+trunc(random(200)));
+       lequation.Caption := inttostr(one)+'-'+inttostr(two);
+       res := one - two;
+    END;
+
+    3 :BEGIN
+       lresult.Caption := IntToStr((one * two)-100+trunc(random(200)));
+       lequation.Caption := inttostr(one)+'*'+inttostr(two);
+       res := one * two;
+    END;
+
+
+  end;
+  LScore.Caption := '5000';
+
+end;
+
+procedure TForm9.Timer1Timer(Sender: TObject);
+begin
+if LScore.Caption <> 0 then.Caption := IntToStr(StrToInt(lscore.Caption)-500);
+time := time - 100;
+PTime.Position := time;
+
+if time <= 0 then
+BEGIN
+  BLEss.Enabled := false;
+  BMore.Enabled := false;
+  TimeUp.Visible := true;
+END;
+TotalScore.Caption := IntToStr(PlayerTotalScore);
+end;
+
+
+end.
